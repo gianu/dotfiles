@@ -46,8 +46,6 @@ set showcmd
 set ruler
 " Show line number in the left side
 set number
-" Enable syntax highlighting
-syntax on
 " Enable filetype detection
 " Use the default filetype settings, so that mail get 'tw' set to 72,
 " 'cindent' is on C files, etc
@@ -92,7 +90,7 @@ set autoread
 " Use the old vim regex engine (version 1, as opposed to version 2, which was
 " introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
 " slower with the new regex engine.
-set re=1
+" set re=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LOAD Plug
@@ -110,14 +108,18 @@ Plug 'kaicataldo/material.vim'
 " Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'mxw/vim-jsx'
+" Plug 'peitalin/vim-jsx-typescript'
 " Plug 'dag/vim-fish'
 Plug 'elixir-editors/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'quramy/tsuquyomi'
+Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jvirtanen/vim-hcl'
@@ -127,12 +129,18 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'vim-syntastic/syntastic'
 Plug 'cespare/vim-toml'
+Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'peterhoeg/vim-qml'
 
 call plug#end()
 
 filetype plugin indent on
+
+" Enable syntax highlighting
+syntax on
 
 let g:airline_theme='one'
 let g:airline_powerline_fonts=1
@@ -141,6 +149,17 @@ let NERDTreeShowHidden=1
 
 let g:typescript_compiler_binary='tsc'
 let g:typescript_compiler_options='--jsx react'
+
+let g:syntastic_alwasys_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+
+let g:rustfmt_autosave=1
+let g:syntastic_rust_checkers = ['xargo']
+
+let g:vim_jsx_pretty_colorful_config=1
+let g:tsuquyomi_disable_quickfix=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMD
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,6 +222,10 @@ colorscheme material
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+" Test statusline for Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAP
@@ -331,29 +354,33 @@ map <leader>t :NERDTreeToggle<cr>
 " map <leader>b :Gblame<cr>
 map <leader>b :<C-u>call gitblame#echo()<CR>
 
+map <leader>gj :ALENextWrap<CR>
+map <leader>gk :ALEPreviousWrap<CR>
+map <leader>g1 :ALEFirst<CR>
+map <leader>g0 :ALEStopAllLSPs<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TSX Color support
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " dark red
-hi tsxTagName guifg=#E06C75
-
-" orange
-hi tsxCloseString guifg=#F99575
-hi tsxCloseTag guifg=#F99575
-hi tsxAttributeBraces guifg=#F99575
-hi tsxEqual guifg=#F99575
-
-" yellow
-hi tsxAttrib guifg=#F8BD7F cterm=italic
-
-" light-grey
-hi tsxTypeBraces guifg=#999999
-" dark-grey
-hi tsxTypes guifg=#666666
-
-hi ReactState guifg=#C176A7
-hi ReactProps guifg=#D19A66
-hi Events ctermfg=204 guifg=#56B6C2
-hi ReduxKeywords ctermfg=204 guifg=#C678DD
-hi WebBrowser ctermfg=204 guifg=#56B6C2
-hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
+" hi tsxTagName guifg=#E06C75
+"
+" " orange
+" hi tsxCloseString guifg=#F99575
+" hi tsxCloseTag guifg=#F99575
+" hi tsxAttributeBraces guifg=#F99575
+" hi tsxEqual guifg=#F99575
+"
+" " yellow
+" hi tsxAttrib guifg=#F8BD7F cterm=italic
+"
+" " light-grey
+" hi tsxTypeBraces guifg=#999999
+" " dark-grey
+" hi tsxTypes guifg=#666666
+"
+" hi ReactState guifg=#C176A7
+" hi ReactProps guifg=#D19A66
+" hi Events ctermfg=204 guifg=#56B6C2
+" hi ReduxKeywords ctermfg=204 guifg=#C678DD
+" hi WebBrowser ctermfg=204 guifg=#56B6C2
+" hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66

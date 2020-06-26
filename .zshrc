@@ -34,12 +34,13 @@ export GO111MODULE=on
 
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
-export GOPATH=/Users/gianu/work/go
+export GOPATH=/home/gianu/work/go
 
 export PATH=/usr/local/heroku/bin
 export PATH=$PATH:/Users/gianu/bin
 export PATH=$PATH:/Users/gianu/.cabal/bin
 export PATH=$PATH:$HOME/.bin
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:./node_modules/.bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/bin
@@ -51,7 +52,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
 export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/Users/gianu/Library/flutter/bin
+export PATH=$PATH:/usr/local/flutter/bin
+export PATH=$PATH:/snap/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -102,7 +104,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 ############################
 
 alias ls='exa' #-G
-alias ps='procs'
+# alias ps='procs'
 alias cat='bat'
 alias less='bat'
 alias grep='ripgrep'
@@ -312,10 +314,8 @@ function ecrlogin() {
   $(aws ecr get-login --no-include-email --region us-east-1)
 }
 
-function nuse() {
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  nvm use
-}
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #############
 ### Other ###
@@ -324,7 +324,7 @@ function nuse() {
 . $HOME/.zshrc-private
 
 
-export NVM_DIR="$HOME/.nvm"
+# export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ulimit -n 10240
@@ -332,3 +332,11 @@ ulimit -n 10240
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+
+###############
+# Linux Brew  #
+###############
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
