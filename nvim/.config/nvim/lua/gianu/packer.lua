@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
 
   use('tpope/vim-commentary')
   -- nvim-tree
-  -- use('nvim-tree/nvim-web-devicons')
+  use('nvim-tree/nvim-web-devicons')
   -- use('nvim-tree/nvim-tree.lua')
 
 
@@ -58,9 +58,9 @@ return require('packer').startup(function(use)
       end
   })
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end}
+  -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  --   require("toggleterm").setup()
+  -- end}
 
   use('github/copilot.vim')
 

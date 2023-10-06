@@ -1,5 +1,6 @@
 require("gianu.set")
 require("gianu.remap")
+require("gianu.packer")
 
 -- for nvim-tree
 -- vim.g.loaded_netrw = 1

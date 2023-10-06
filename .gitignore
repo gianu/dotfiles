@@ -1,0 +1,16 @@
+bin/.local/share/
+bin/.local/state/
+others/.config/Lumina 
+others/.config/coc
+others/.config/configstore
+others/.config/exercism
+others/.config/fish
+others/.config/flutter
+others/.config/gatsby
+others/.config/github-copilot
+others/.config/iterm2
+others/.config/nvim-bak
+others/.config/raycast
+others/.config/simple-update-notifier
+others/.config/yarn
+others/.config/zedyarn
