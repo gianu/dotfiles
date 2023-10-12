@@ -38,6 +38,7 @@ export CPPFLAGS="-I/usr/local/opt/libffi/include"
 
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
+export GOPATH=`go env GOPATH`
 
 export PATH=$PATH:/Users/gianu/bin
 export PATH=$PATH:$HOME/.bin
