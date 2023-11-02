@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/gianu/.cache/nvim/packer_hererocks/2.1.1695653777/share/lua/5.1/?.lua;/Users/gianu/.cache/nvim/packer_hererocks/2.1.1695653777/share/lua/5.1/?/init.lua;/Users/gianu/.cache/nvim/packer_hererocks/2.1.1695653777/lib/luarocks/rocks-5.1/?.lua;/Users/gianu/.cache/nvim/packer_hererocks/2.1.1695653777/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/gianu/.cache/nvim/packer_hererocks/2.1.1695653777/lib/lua/5.1/?.so"
+local package_path_str = "/Users/gianu/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/gianu/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/gianu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/gianu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/gianu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -139,6 +139,12 @@ _G.packer_plugins = {
     path = "/Users/gianu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  orgmode = {
+    config = { "\27LJ\2\nà\2\0\0\5\0\15\0\0266\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0005\2\r\0005\3\f\0=\3\14\2B\0\2\1K\0\1\0\21org_agenda_files\1\0\1\27org_default_notes_file\27~/.orgfiles/refile.org\1\2\0\0\21~/.orgfiles/**/*\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\21setup_ts_grammar\forgmode\frequire\0" },
+    loaded = true,
+    path = "/Users/gianu/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/gianu/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -187,6 +193,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: orgmode
+time([[Config for orgmode]], true)
+try_loadstring("\27LJ\2\nà\2\0\0\5\0\15\0\0266\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0005\2\r\0005\3\f\0=\3\14\2B\0\2\1K\0\1\0\21org_agenda_files\1\0\1\27org_default_notes_file\27~/.orgfiles/refile.org\1\2\0\0\21~/.orgfiles/**/*\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\21setup_ts_grammar\forgmode\frequire\0", "config", "orgmode")
+time([[Config for orgmode]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

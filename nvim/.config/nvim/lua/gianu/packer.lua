@@ -30,8 +30,7 @@ return require('packer').startup(function(use)
     -- LSP Support
     {'neovim/nvim-lspconfig'},             -- Required
     {'williamboman/mason.nvim'},           -- Optional
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional 
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
@@ -70,4 +69,22 @@ return require('packer').startup(function(use)
   })
 
   use({'christoomey/vim-tmux-navigator', lazy = false })
+  use({'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup_ts_grammar()
+
+    -- Setup treesitter
+    require('nvim-treesitter.configs').setup({
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { 'org' },
+      },
+      ensure_installed = { 'org' },
+    })
+    -- Setup orgmode
+    require('orgmode').setup({
+      org_agenda_files = {'~/.orgfiles/**/*'},
+      org_default_notes_file = '~/.orgfiles/refile.org',
+    })
+  end
+  })
 end)

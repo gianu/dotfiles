@@ -36,10 +36,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
 
-export ANDROID_HOME=/Users/gianu/Library/Android/sdk
-export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
-export GOPATH=`go env GOPATH`
-
 export PATH=$PATH:/Users/gianu/bin
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:./node_modules/.bin
@@ -54,6 +50,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
 export PATH=$PATH:$HOME/.local/scripts
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -316,5 +314,10 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 # Enable asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+
+export ANDROID_HOME=/Users/gianu/Library/Android/sdk
+export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
+export GOPATH=`go env GOPATH`
 
 source ~/.api_tz_dont_delete
