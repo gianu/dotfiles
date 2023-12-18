@@ -12,3 +12,9 @@ vim.g.netrw_winsize = 25
 
 vim.opt.termguicolors = true
 
+-- Add filetype support for mdx
+vim.filetype.add({
+  extension = {
+    mdx = 'markdown'
+  }
+})

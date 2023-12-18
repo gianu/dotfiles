@@ -8,6 +8,7 @@ lsp.ensure_installed({
 	'lua_ls',
 	'rust_analyzer',
   'gopls',
+  'elixirls',
 })
 
 -- Better way of fixing undefined global vim

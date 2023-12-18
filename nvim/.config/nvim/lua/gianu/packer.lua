@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use('nvim-lua/plenary.nvim')
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
 	  -- or                            , branch = '0.1.x',
@@ -20,7 +21,12 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use('theprimeagen/harpoon')
+  -- use('theprimeagen/harpoon')
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+}
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use {
@@ -68,23 +74,24 @@ return require('packer').startup(function(use)
     requires = {'kyazdani42/nvim-web-devicons'}
   })
 
-  use({'christoomey/vim-tmux-navigator', lazy = false })
-  use({'nvim-orgmode/orgmode', config = function()
-    require('orgmode').setup_ts_grammar()
+  use('ThePrimeagen/vim-be-good')
+  -- use({'christoomey/vim-tmux-navigator', lazy = false })
+  -- use({'nvim-orgmode/orgmode', config = function()
+  --   require('orgmode').setup_ts_grammar()
 
-    -- Setup treesitter
-    require('nvim-treesitter.configs').setup({
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'org' },
-      },
-      ensure_installed = { 'org' },
-    })
-    -- Setup orgmode
-    require('orgmode').setup({
-      org_agenda_files = {'~/.orgfiles/**/*'},
-      org_default_notes_file = '~/.orgfiles/refile.org',
-    })
-  end
-  })
+  --   -- Setup treesitter
+  --   require('nvim-treesitter.configs').setup({
+  --     highlight = {
+  --       enable = true,
+  --       additional_vim_regex_highlighting = { 'org' },
+  --     },
+  --     ensure_installed = { 'org' },
+  --   })
+  --   -- Setup orgmode
+  --   require('orgmode').setup({
+  --     org_agenda_files = {'~/.orgfiles/**/*'},
+  --     org_default_notes_file = '~/.orgfiles/refile.org',
+  --   })
+  -- end
+  -- })
 end)

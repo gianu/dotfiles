@@ -146,10 +146,14 @@ alias python="python3"
 alias grep="grep --color"
 alias fu="fnm use"
 alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
+alias fun="fnm use && npm install"
 alias mkt="make test-watch"
 alias pi="pnpm install"
 
 ## Kubectl aliases for ClassDojo ##
+alias kctl-test='kubectl --context="aws/us-west-1-test"'
+alias kctl-ci='kubectl --context="aws/us-east-1-ci"'
+alias kctl-prod='kubectl --context="aws/us-east-1-prod"'
 alias kctl-west-prod='kubectl --context="aws/us-west-1-external"'
 
 #############################
