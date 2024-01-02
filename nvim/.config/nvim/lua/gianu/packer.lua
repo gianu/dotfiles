@@ -75,6 +75,7 @@ return require('packer').startup(function(use)
   })
 
   use('ThePrimeagen/vim-be-good')
+  use('f-person/git-blame.nvim')
   -- use({'christoomey/vim-tmux-navigator', lazy = false })
   -- use({'nvim-orgmode/orgmode', config = function()
   --   require('orgmode').setup_ts_grammar()
