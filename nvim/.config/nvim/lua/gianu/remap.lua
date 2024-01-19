@@ -1,4 +1,3 @@
--- This keymaps is borrowed from ThePrimeagen
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -24,15 +23,16 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 vim.keymap.set("i", "<C-c>", "<ESC>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format()
 end)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- Using k and j for harpoon
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -41,12 +41,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 --
 
 -- move this to remaps
--- vim.keymap.set("n", "<C-j>", "<C-w>j")
--- vim.keymap.set("n", "<C-k>", "<C-w>k")
--- vim.keymap.set("n", "<C-h>", "<C-w>h")
--- vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-j>", "<C-d>zz")
-vim.keymap.set("n", "<C-k>", "<C-u>zz")
+-- Using j and k for harpoon
+-- vim.keymap.set("n", "<C-j>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-k>", "<C-u>zz")
 
 vim.keymap.set("n", "<leader><leader>", "<C-^>")
 vim.keymap.set("n", ",,", "<C-^>")
@@ -61,4 +58,27 @@ vim.keymap.set("i", "<Up>", function() print("no!") end)
 vim.keymap.set("n", "<Down>", function() print("no!") end)
 vim.keymap.set("i", "<Down>", function() print("no!") end)
 
-vim.keymap.set("n", "<leader>b", ":NvimTreeToggle<cr>")
+-- Auto groups
+
+local GianuGroup = vim.api.nvim_create_augroup('GianuGroup', {})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = GianuGroup,
+  callback = function(ev)
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    local opts = { buffer = ev.buf }
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    -- vim.keymap.set("n", "[d", function () vim.diagnostic.goto_next() end, opts)
+    -- vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    -- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  end
+})
+

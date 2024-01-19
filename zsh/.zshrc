@@ -154,7 +154,7 @@ alias pi="pnpm install"
 alias kctl-test='kubectl --context="aws/us-west-1-test"'
 alias kctl-ci='kubectl --context="aws/us-east-1-ci"'
 alias kctl-prod='kubectl --context="aws/us-east-1-prod"'
-alias kctl-west-prod='kubectl --context="aws/us-west-1-external"'
+alias kctl-ext='kubectl --context="aws/us-west-1-external"'
 
 #############################
 ### Plugins configuration ###
@@ -291,6 +291,12 @@ function mob-start() {
   fi
 
   git checkout -b "$1" && git push origin "$1" --set-upstream --no-verify && mob start --include-uncommitted-changes $2;
+}
+
+# Personal functions
+
+function mem() {
+  top -l 1 -s 0 -stats mem -pid "$1" | tail -n 1
 }
 
 #############
