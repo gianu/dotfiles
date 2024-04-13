@@ -322,12 +322,18 @@ export PATH="$PATH:/Users/gianu/.local/bin"
 # pnpm end
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
+# Java & Android
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
 # Enable asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 
-export ANDROID_HOME=/Users/gianu/Library/Android/sdk
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
 export GOPATH=`go env GOPATH`
 
 source ~/.api_tz_dont_delete
+export PATH=$PATH:$HOME/.maestro/bin
