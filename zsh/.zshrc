@@ -146,6 +146,7 @@ alias python="python3"
 alias grep="grep --color"
 alias fu="fnm use"
 alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
+alias fupi="fnm use && pnpm install"
 alias fun="fnm use && npm install"
 alias mkt="make test-watch"
 alias pi="pnpm install"
@@ -317,13 +318,15 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/Users/gianu/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-export PATH="$PATH:/Users/gianu/.local/bin"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 # Java & Android
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
@@ -337,3 +340,4 @@ export GOPATH=`go env GOPATH`
 
 source ~/.api_tz_dont_delete
 export PATH=$PATH:$HOME/.maestro/bin
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
