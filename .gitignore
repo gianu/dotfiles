@@ -14,3 +14,4 @@ others/.config/raycast
 others/.config/simple-update-notifier
 others/.config/yarn
 others/.config/zedyarn
+*.DS_Store

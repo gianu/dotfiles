@@ -22,7 +22,7 @@ export LESS_TERMCAP_so=$'\E[00;47;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export LESS=eFRX
-export GREP_OPTIONS='--color=always'
+# export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;35;40'
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -57,6 +57,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 
+export ZELLIJ_CONFIG_FILE=~/.config/zellij/config.kdl
 
 #############################
 ### General configuration ###
@@ -150,6 +151,10 @@ alias fupi="fnm use && pnpm install"
 alias fun="fnm use && npm install"
 alias mkt="make test-watch"
 alias pi="pnpm install"
+alias pd="pnpm run dev"
+alias pt="pnpm test"
+
+alias void-diary="nvim /dev/null"
 
 ## Kubectl aliases for ClassDojo ##
 alias kctl-test='kubectl --context="aws/us-west-1-test"'
