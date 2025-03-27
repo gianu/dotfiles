@@ -1,7 +1,0 @@
--- -- run :AICommitMsg from a commit buffer to get an AI generated commit message
--- vim.api.nvim_create_user_command("AICommitMsg", function()
---   local text = vim.fn.system("~/local/bin/ai-commit-msg.sh")
---   vim.api.nvim_put(vim.split(text, "\n", {}), "", false, true)
--- end, {})
---
--- vim.keymap.set("n", "gcm", "<cmd>AICommitMsg<cr>", { desc = "Genarate Commit Msg" })
