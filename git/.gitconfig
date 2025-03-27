@@ -3,7 +3,19 @@
   email = sergio@gianu.me
   # signingkey = F0D3E6F5
 [diff]
-	noprefix = true
+  noprefix = true
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[init]
+  defaultBranch = main
+[column]
+  ui = auto
 [color]
   ui = true
 [color "branch"]
@@ -21,6 +33,26 @@
   added = green
   changed = yellow
   untracked = cyan
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[commit]
+  verbose = true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[pull]
+  rebase = false
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[rerere]
+  enabled = true
+  autoupdate = true
 [alias]
   st = status -sb
   ci = commit --verbose
@@ -62,7 +94,8 @@
   tool = vimdiff
 [core]
   editor = /usr/local/bin/nvim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  excludefile = ~/.gitignore
 [i18n]
 	logOutputEncoding = UTF-8
 	commitencoding = UTF-8
@@ -70,15 +103,13 @@
 	user = gianu
 [ghi]
 	token = !security find-internet-password -a gianu -s github.com -l 'ghi token' -w
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
 # [commit]
 #   gpgsign = true
 ; [url "git@github.com:"]
 ;   insteadOf = https://github.com/
 
-[pull]
-	rebase = false
+
+[includeIf "gitdir:~/work/classdojo/"]
+  path = ~/.dojo.gitconfig
+[help]
+	autocorrect = prompt

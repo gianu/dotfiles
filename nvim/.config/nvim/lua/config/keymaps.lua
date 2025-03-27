@@ -41,3 +41,15 @@ end)
 
 -- Add error handling to go
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+
+-- Move between tabs like moving through buffers
+vim.keymap.set("n", "gt", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+vim.keymap.set("n", "gT", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
+
+-- run :AICommitMsg from a commit buffer to get an AI generated commit message
+vim.api.nvim_create_user_command("AICommitMsg", function()
+  local text = vim.fn.system("~/.local/scripts/ai-commit-msg.sh")
+  vim.api.nvim_put(vim.split(text, "\n", {}), "", false, true)
+end, {})
+
+vim.keymap.set("n", "gm", "<cmd>AICommitMsg<cr>", { desc = "Genarate Commit Msg" })

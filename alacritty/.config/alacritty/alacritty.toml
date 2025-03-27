@@ -1,5 +1,3 @@
-import = ["/Users/gianu/.config/alacritty/themes/themes/catppuccin.toml"]
-live_config_reload = true
 
 [bell]
 animation = "EaseOutExpo"
@@ -24,10 +22,12 @@ size = 15.0
 
 [font.bold]
 family = "JetBrainsMonoNL Nerd Font"
+# family = "MonoLisa"
 style = "Bold"
 
 [font.bold_italic]
 family = "JetBrainsMonoNL Nerd Font"
+# family = "MonoLisa"
 style = "Bold Italic"
 
 [font.glyph_offset]
@@ -36,10 +36,12 @@ y = 0
 
 [font.italic]
 family = "JetBrainsMonoNL Nerd Font"
+# family = "MonoLisa"
 style = "Italic"
 
 [font.normal]
 family = "JetBrainsMonoNL Nerd Font"
+# family = "MonoLisa"
 style = "Regular"
 
 [font.offset]
@@ -368,3 +370,6 @@ lines = 85
 x = 0
 y = 0
 
+[general]
+live_config_reload = true
+import = ["/Users/gianu/.config/alacritty/themes/themes/catppuccin.toml"]

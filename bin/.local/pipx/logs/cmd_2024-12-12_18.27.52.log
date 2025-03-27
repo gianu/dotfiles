@@ -1,0 +1,12 @@
+   178.3ms (setup:1108): 2024-12-12 18:27:52
+   178.4ms (setup:1109): /opt/homebrew/bin/pipx ensurepath
+   178.4ms (setup:1110): pipx version is 1.7.1
+   178.5ms (setup:1111): Default python interpreter is '/opt/homebrew/opt/python@3.13/libexec/bin/python'
+   178.5ms (mkdir:76): creating directory /Users/gianu/.dotfiles/bin/.local/pipx/venvs
+   178.6ms (mkdir:76): creating directory /Users/gianu/.dotfiles/bin/.local/bin
+   178.7ms (mkdir:76): creating directory /Users/gianu/.dotfiles/bin/.local/share/man
+   178.8ms (mkdir:76): creating directory /Users/gianu/.dotfiles/bin/.local/pipx/.cache
+   178.9ms (mkdir:76): creating directory /Users/gianu/.dotfiles/bin/.local/pipx/py
+   179.0ms (setup:1125): Adding CACHEDIR.TAG to cache directory
+   179.2ms (setup:1125): Adding CACHEDIR.TAG to cache directory
+  4991.5ms (cli:1187): pipx finished.

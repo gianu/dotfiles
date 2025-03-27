@@ -1,0 +1,43 @@
+    78.6ms (setup:1108): 2024-12-12 21:28:16
+    78.7ms (setup:1109): /opt/homebrew/bin/pipx install poetry
+    78.7ms (setup:1110): pipx version is 1.7.1
+    78.7ms (setup:1111): Default python interpreter is '/opt/homebrew/opt/python@3.13/libexec/bin/python'
+    79.2ms (package_name_from_spec:378): Determined package name: poetry
+    79.3ms (package_name_from_spec:379): Package name determined in 0.0s
+    79.3ms (create_venv:164): Creating virtual environment
+    79.5ms (run_subprocess:175): running /opt/homebrew/opt/python@3.13/libexec/bin/python -m venv --without-pip /Users/gianu/.dotfiles/bin/.local/pipx/venvs/poetry
+   127.0ms (run_subprocess:195): stdout:
+   127.1ms (run_subprocess:197): stderr:
+   127.1ms (run_subprocess:198): returncode: 0
+   127.9ms (run_subprocess:175): running /opt/homebrew/opt/python@3.13/libexec/bin/python -m venv --clear /Users/gianu/.dotfiles/bin/.local/pipx/shared
+  2002.9ms (run_subprocess:195): stdout:
+  2003.0ms (run_subprocess:197): stderr:
+  2003.0ms (run_subprocess:198): returncode: 0
+  2003.4ms (run_subprocess:175): running <checking pip's availability>
+  2030.3ms (run_subprocess:195): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x100c02c10>, origin='/Users/gianu/.dotfiles/bin/.local/pipx/shared/lib/python3.13/site-packages/pip/__init__.py', submodule_search_locations=['/Users/gianu/.dotfiles/bin/.local/pipx/shared/lib/python3.13/site-packages/pip'])
+  2030.4ms (run_subprocess:198): returncode: 0
+  2030.6ms (upgrade:119): Upgrading shared libraries in /Users/gianu/.dotfiles/bin/.local/pipx/shared
+  2031.0ms (run_subprocess:175): running /Users/gianu/.dotfiles/bin/.local/pipx/shared/bin/python -m pip --no-input --disable-pip-version-check install --force-reinstall -q --upgrade pip >= 23.1
+  3615.3ms (run_subprocess:195): stdout:
+  3615.4ms (run_subprocess:197): stderr:
+  3615.4ms (run_subprocess:198): returncode: 0
+  3615.8ms (run_subprocess:175): running /Users/gianu/.dotfiles/bin/.local/pipx/venvs/poetry/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+  3645.4ms (run_subprocess:195): stdout: /Users/gianu/.dotfiles/bin/.local/pipx/venvs/poetry/lib/python3.13/site-packages
+  3645.5ms (run_subprocess:198): returncode: 0
+  3645.8ms (run_subprocess:175): running /Users/gianu/.dotfiles/bin/.local/pipx/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+  3672.1ms (run_subprocess:195): stdout: /Users/gianu/.dotfiles/bin/.local/pipx/shared/lib/python3.13/site-packages
+  3672.2ms (run_subprocess:198): returncode: 0
+  3672.7ms (run_subprocess:175): running /Users/gianu/.dotfiles/bin/.local/pipx/venvs/poetry/bin/python --version
+  3687.3ms (run_subprocess:195): stdout: Python 3.13.0
+  3687.4ms (run_subprocess:197): stderr:
+  3687.4ms (run_subprocess:198): returncode: 0
+  3687.7ms (_parsed_package_to_package_or_url:139): cleaned package spec: poetry
+  3687.7ms (install_package:247): Installing poetry
+  3688.0ms (run_subprocess:175): running /Users/gianu/.dotfiles/bin/.local/pipx/venvs/poetry/bin/python -m pip --no-input install poetry
+ 15993.9ms (run_subprocess:198): returncode: 0
+ 15994.4ms (run_subprocess:175): running <fetch_info_in_venv commands>
+ 16024.6ms (run_subprocess:195): stdout: {"sys_path": ["/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python313.zip", "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13", "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload", "/Users/gianu/.dotfiles/bin/.local/pipx/venvs/poetry/lib/python3.13/site-packages", "/Users/gianu/.dotfiles/bin/.local/pipx/shared/lib/python3.13/site-packages"], "python_version": "3.13.0", "environment": {"implementation_name": "cpython", "implementation_version": "3.13.0", "os_name": "posix", "platform_machine": "arm64", "platform_release": "24.1.0", "platform_system": "Darwin", "platform_version": "Darwin Kernel Version 24.1.0: Thu Oct 10 21:03:11 PDT 2024; root:xnu-11215.41.3~2/RELEASE_ARM64_T6020", "python_full_version": "3.13.0", "platform_python_implementation": "CPython", "python_version": "3.13", "sys_platform": "darwin"}}
+ 16024.7ms (run_subprocess:198): returncode: 0
+ 16151.3ms (get_venv_metadata_for_package:351): get_venv_metadata_for_package: 157ms
+ 16151.4ms (_parsed_package_to_package_or_url:139): cleaned package spec: poetry
+ 16153.6ms (cli:1187): pipx finished.

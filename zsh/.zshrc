@@ -145,6 +145,8 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias python="python3"
 
 alias grep="grep --color"
+
+# Node 
 alias fu="fnm use"
 alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
 alias fupi="fnm use && pnpm install"
@@ -154,13 +156,18 @@ alias pi="pnpm install"
 alias pd="pnpm run dev"
 alias pt="pnpm test"
 
-alias void-diary="nvim /dev/null"
+# Ruby
+alias r="bin/rails"
+alias dev="bin/dev"
+
 
 ## Kubectl aliases for ClassDojo ##
 alias kctl-test='kubectl --context="aws/us-west-1-test"'
 alias kctl-ci='kubectl --context="aws/us-east-1-ci"'
 alias kctl-prod='kubectl --context="aws/us-east-1-prod"'
 alias kctl-ext='kubectl --context="aws/us-west-1-external"'
+
+alias void-diary="nvim /dev/null"
 
 #############################
 ### Plugins configuration ###
@@ -333,8 +340,8 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 # Java & Android
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
+# export PATH="$PATH:$ANDROID_HOME/emulator"
+# export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # Enable asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
@@ -344,5 +351,12 @@ export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
 export GOPATH=`go env GOPATH`
 
 source ~/.api_tz_dont_delete
-export PATH=$PATH:$HOME/.maestro/bin
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export PATH=$PATH:$HOME/.maestro/bin
+
+# Created by `pipx` on 2024-12-12 21:27:54
+export PATH="$PATH:/Users/gianu/.dotfiles/bin/.local/bin"
+
+# bun completions
+[ -s "/Users/gianu/.bun/_bun" ] && source "/Users/gianu/.bun/_bun"
+
+eval "$(~/.local/bin/mise activate)"
