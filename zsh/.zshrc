@@ -131,7 +131,7 @@ alias lzd='lazydocker'
 
 # alias pb='kaizoku'
 
-alias yi='yarn install --pure-lockfile --mutex network'
+alias yi='yarn install'
 alias yd='yarn dev'
 
 alias mt='mix test'

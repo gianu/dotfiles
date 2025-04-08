@@ -46,10 +46,10 @@
   followTags = true
 [pull]
   rebase = false
-[fetch]
-  prune = true
-  pruneTags = true
-  all = true
+; [fetch]
+;   prune = true
+;   pruneTags = true
+;   all = true
 [rerere]
   enabled = true
   autoupdate = true
