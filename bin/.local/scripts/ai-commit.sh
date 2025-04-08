@@ -33,9 +33,9 @@ spinner $pid
 exit_status=$(cat "$temp_file.status")
 
 if [ "$exit_status" -ne 0 ]; then
-  echo "Error: AI commit message generation failed!"
+  echo -e "\033[31mError: AI commit message generation failed!\033[0m"
   if [ -s "$error_file" ]; then
-    echo "Error details:"
+    echo -e "\033[31mError details:\033[0m"
     cat "$error_file"
   fi
   # Clean up temporary files
@@ -47,7 +47,7 @@ fi
 commit_message=$(cat "$temp_file")
 
 # Display the commit message
-echo "Generated commit message:"
+echo -e "\033[32mGenerated commit message:\033[0m"
 cat "$temp_file"
 
 # Clean up temporary files

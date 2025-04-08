@@ -2,7 +2,7 @@
 
 # Check if ANTHROPIC_API_KEY is set
 if [ -z "$ANTHROPIC_API_KEY" ]; then
-  echo "Error: ANTHROPIC_API_KEY environment variable is not set" >&2
+  echo -e "\033[31mError: ANTHROPIC_API_KEY environment variable is not set\033[0m" >&2
   exit 1
 fi
 
@@ -10,7 +10,7 @@ fi
 diff_context=$(git diff --cached --diff-algorithm=minimal)
 
 if [ -z "$diff_context" ]; then
-  echo "Error: No staged changes found" >&2
+  echo -e "\033[31mError: No staged changes found\033[0m" >&2
   exit 1
 fi
 

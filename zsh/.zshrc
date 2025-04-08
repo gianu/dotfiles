@@ -163,6 +163,7 @@ alias dev="bin/dev"
 
 # Git and related
 alias gc=". ~/.local/scripts/ai-commit.sh"
+alias gm=". ~/.local/scripts/ai-commit.sh"
 
 ## Kubectl aliases for ClassDojo ##
 alias kctl-test='kubectl --context="aws/us-west-1-test"'
