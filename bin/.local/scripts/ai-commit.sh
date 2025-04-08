@@ -7,7 +7,7 @@ spinner() {
   local spinstr='|/-\'
   while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
     local temp=${spinstr#?}
-    printf " [%c] Generating AI commit message...  " "$spinstr"
+    printf "\033[33m [%c] Generating AI commit message...  \033[0m" "$spinstr"
     local spinstr=$temp${spinstr%"$temp"}
     sleep $delay
     printf "\r"
