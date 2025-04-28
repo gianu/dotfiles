@@ -148,7 +148,7 @@ alias grep="grep --color"
 
 # Node 
 alias fu="fnm use"
-alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
+alias fuyi="fnm use && yarn install"
 alias fupi="fnm use && pnpm install"
 alias fun="fnm use && npm install"
 alias mkt="make test-watch"
