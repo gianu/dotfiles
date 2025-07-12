@@ -364,3 +364,4 @@ export PATH="$PATH:/Users/gianu/.dotfiles/bin/.local/bin"
 [ -s "/Users/gianu/.bun/_bun" ] && source "/Users/gianu/.bun/_bun"
 
 eval "$(~/.local/bin/mise activate)"
+alias claude="/Users/gianu/.claude/local/claude"

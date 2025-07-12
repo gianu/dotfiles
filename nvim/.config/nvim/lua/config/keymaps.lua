@@ -40,11 +40,11 @@ vim.keymap.set("i", "<Down>", function()
 end)
 
 -- Add error handling to go
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+-- vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 -- Move between tabs like moving through buffers
-vim.keymap.set("n", "gt", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-vim.keymap.set("n", "gT", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
+-- vim.keymap.set("n", "gt", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+-- vim.keymap.set("n", "gT", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
 
 -- This command is created in the autocmds file
 vim.keymap.set("n", "gm", "<cmd>AICommitMsg<cr>", { desc = "Genarate Commit Msg" })
