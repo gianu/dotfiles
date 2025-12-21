@@ -35,15 +35,12 @@ export GOSUMDB=off
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
+export TMPDIR="$HOME/.tmp"
+
 
 export PATH=$PATH:/Users/gianu/bin
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:./node_modules/.bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
@@ -347,12 +344,8 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 # export PATH="$PATH:$ANDROID_HOME/emulator"
 # export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
-# Enable asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
-export GOPATH=`go env GOPATH`
 
 source ~/.api_tz_dont_delete
 # export PATH=$PATH:$HOME/.maestro/bin
@@ -364,4 +357,15 @@ export PATH="$PATH:/Users/gianu/.dotfiles/bin/.local/bin"
 [ -s "/Users/gianu/.bun/_bun" ] && source "/Users/gianu/.bun/_bun"
 
 eval "$(~/.local/bin/mise activate)"
+
+
+export GOPATH=`go env GOPATH`
 alias claude="/Users/gianu/.claude/local/claude"
+
+
+# Adding this here so mise and other tool managers get prioritized
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin

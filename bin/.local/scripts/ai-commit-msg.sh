@@ -71,9 +71,23 @@ response=$(curl -s https://api.anthropic.com/v1/messages \
             }
         ]
     }")
+# response=$(
+#   curl -s http://localhost:11434/api/chat \
+#     -H "Content-Type: application/json" \
+#     --data-raw "{
+#       \"model\": \"phi3:mini\",
+#       \"messages\": [
+#         {
+#           \"role\": \"user\",
+#           \"content\": ${json_escaped_prompt}
+#         }
+#       ], \"stream\": false
+#   }"
+# )
 
 # Extract the commit message from the response
 commit_message=$(echo "$response" | jq -r '.content[0].text')
+# commit_message=$(echo "$response" | jq -r '.message.content')
 
 # Output the commit message
 echo "$commit_message"

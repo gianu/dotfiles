@@ -14,6 +14,8 @@ COMMITTER_ASSOCIATIONS = {
     "MikeFernandez-Pro": "Mike Fernandez",
     "Leonardo Andres Garcia Crespo": "Leonardo Garcia Crespo",
     "paltasosa": "Mariano Sosa",
+    "Jorge DM": "Jorge Dalmendray",
+    "Jorge  Dalmendray": "Jorge Dalmendray",
     # Add more associations as needed
     # "alias": "Canonical Name",
 }
