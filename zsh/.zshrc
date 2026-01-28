@@ -96,8 +96,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 ############################
 ### Aliases              ###
@@ -319,6 +319,8 @@ function mem() {
 
 . $HOME/.zshrc-private
 
+. $HOME/.zsh/func/worktrees
+
 
 eval "$(fnm env)"
 
@@ -360,7 +362,6 @@ eval "$(~/.local/bin/mise activate)"
 
 
 export GOPATH=`go env GOPATH`
-alias claude="/Users/gianu/.claude/local/claude"
 
 
 # Adding this here so mise and other tool managers get prioritized
@@ -369,3 +370,13 @@ export PATH=$PATH:/usr/bin
 export PATH=$PATH:/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
+export PATH=$HOME/.local/bin:$PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+eval "$(starship init zsh)"
+
+# PostgreSQL client (psql) - for Redshift connections
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
