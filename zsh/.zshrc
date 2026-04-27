@@ -125,6 +125,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 
 alias lzd='lazydocker'
+alias lg='lazygit'
 
 # alias pb='kaizoku'
 
@@ -137,13 +138,11 @@ alias mt='mix test'
 
 alias vi="nvim"
 alias vim="nvim"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-
-alias python="python3"
+alias nvim-resign='find ~/.local/share/nvim -name "*.so" -exec codesign --force --sign - {} \; && find ~/.local/share/nvim -name "*.dylib" -exec codesign --force --sign - {} \;'
 
 alias grep="grep --color"
 
-# Node 
+# Node
 alias fu="fnm use"
 alias fuyi="fnm use && yarn install"
 alias fupi="fnm use && pnpm install"
@@ -169,6 +168,8 @@ alias kctl-prod='kubectl --context="aws/us-east-1-prod"'
 alias kctl-ext='kubectl --context="aws/us-west-1-external"'
 
 alias void-diary="nvim /dev/null"
+
+alias wm="workmux"
 
 #############################
 ### Plugins configuration ###
@@ -360,6 +361,9 @@ export PATH="$PATH:/Users/gianu/.dotfiles/bin/.local/bin"
 
 eval "$(~/.local/bin/mise activate)"
 
+precmd_functions=()
+preexec_functions=()
+
 
 export GOPATH=`go env GOPATH`
 
@@ -380,3 +384,4 @@ eval "$(starship init zsh)"
 
 # PostgreSQL client (psql) - for Redshift connections
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export DISABLE_AUTO_TITLE="true"
