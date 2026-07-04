@@ -93,7 +93,7 @@
 [merge]
   tool = vimdiff
 [core]
-  editor = /usr/local/bin/nvim
+  editor = nvim
   pager = diff-so-fancy | less --tabs=4 -RFX
   excludefile = ~/.gitignore
 [i18n]

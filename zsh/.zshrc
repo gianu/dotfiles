@@ -56,6 +56,11 @@ export LANG=en_US.UTF-8
 
 export ZELLIJ_CONFIG_FILE=~/.config/zellij/config.kdl
 
+# zoxide exclude dirs
+export _ZO_EXCLUDE_DIRS="/tmp:/var:/proc:/sys:/node_modules:/.git:/dist:/build"
+# zoxide keep 1 year of history
+export _ZO_MAXAGE=365
+
 #############################
 ### General configuration ###
 #############################
@@ -381,6 +386,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # PostgreSQL client (psql) - for Redshift connections
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
