@@ -15,4 +15,5 @@ others/.config/simple-update-notifier
 others/.config/yarn
 others/.config/zedyarn
 bin/.local/bin/claude
+bin/.local/bin/herdr
 *.DS_Store

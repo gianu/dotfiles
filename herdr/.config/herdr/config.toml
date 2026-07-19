@@ -1,0 +1,17 @@
+onboarding = false
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "off"
+
+[ui.sound]
+enabled = true
+
+[theme]
+name = "catppuccin"
+
+[keys]
+prefix = "ctrl+a"
+goto = "prefix+f"
