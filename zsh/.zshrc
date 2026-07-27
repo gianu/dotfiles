@@ -340,8 +340,8 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # pnpm
 export PNPM_HOME="/Users/gianu/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
@@ -349,13 +349,14 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 # Java & Android
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-# export PATH="$PATH:$ANDROID_HOME/emulator"
-# export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 
 
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
 
-source ~/.api_tz_dont_delete
+#source ~/.api_tz_dont_delete
 # export PATH=$PATH:$HOME/.maestro/bin
 
 # Created by `pipx` on 2024-12-12 21:27:54
@@ -391,3 +392,6 @@ eval "$(zoxide init zsh)"
 # PostgreSQL client (psql) - for Redshift connections
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export DISABLE_AUTO_TITLE="true"
+
+# opencode
+export PATH=/Users/gianu/.opencode/bin:$PATH

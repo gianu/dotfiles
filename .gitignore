@@ -17,3 +17,7 @@ others/.config/zedyarn
 bin/.local/bin/claude
 bin/.local/bin/herdr
 *.DS_Store
+herdr/.config/herdr/.plugins.lock
+herdr/.config/herdr/herdr-client.log
+herdr/.config/herdr/herdr-server.log
+herdr/.config/herdr/session.json

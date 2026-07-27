@@ -1,0 +1,16 @@
+theme = catppuccin-mocha
+font-family = MonoLisa
+font-size = 14
+
+alpha-blending = linear-corrected
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+
+background-opacity = 0.96
+# background-border-radius = 40
+
+mouse-hide-while-typing = true
+
+window-inherit-working-directory = false
