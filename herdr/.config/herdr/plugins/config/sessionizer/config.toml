@@ -1,0 +1,34 @@
+[projects]
+roots = ["~/dev", "~/personal", "~/work", "~/work/classdojo"]
+git_only = true
+depth = 1
+
+[ui]
+placement = "overlay"
+
+[layout]
+focus = "agent" # must match a pane id below — lands you in nvim
+
+[tabs.agent]
+label = "agent"
+
+[[tabs.agent.panes]]
+id = "agent"
+title = "agent"
+command = "codex" # your draft had opencode — use whichever you meant
+
+[tabs.vim]
+label = "vim"
+
+[[tabs.vim.panes]]
+id = "editor"
+title = "vim"
+command = "nvim ."
+
+[tabs.server]
+label = "server"
+
+[[tabs.server.panes]]
+id = "server"
+title = "server"
+# no command — plain shell, ready for `npm run dev` or whatever

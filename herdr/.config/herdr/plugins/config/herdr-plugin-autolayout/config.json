@@ -1,0 +1,18 @@
+{
+  "roots": ["~/dev", "~/personal", "~/work", "~/work/classdojo"],
+  "tabs": [
+    {
+      "title": "agents",
+      "command": "codex"
+    },
+    {
+      "title": "vim",
+      "command": "nvim ."
+    },
+    {
+      "title": "server"
+    }
+  ],
+  "maxExistingTabs": 1,
+  "onlyLinkedWorktrees": true
+}

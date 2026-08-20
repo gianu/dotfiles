@@ -1,0 +1,14 @@
+name = "Default"
+description = "The Default project"
+# working_dir = "~/Development/options-cafe/options.cafe"   # ~ and $VARS expand
+
+[[tabs]]
+name = "agent"
+command = "codex"
+
+[[tabs]]
+name = "vim"
+command = "nvim ."
+
+[[tabs]]
+name = "server"

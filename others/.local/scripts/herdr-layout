@@ -1,0 +1,39 @@
+#!/bin/sh
+# ~/.local/scripts/herdr-layout — agents/vim/server tabs, land in server, drop the original tab
+set -eu
+
+json="$(herdr workspace list)"
+
+ws="${HERDR_WORKSPACE_ID:-$(printf '%s' "$json" |
+  jq -r '.result.workspaces[] | select(.focused == true) | .workspace_id')}"
+
+cwd="$(printf '%s' "$json" |
+  jq -r --arg ws "$ws" '.result.workspaces[]
+      | select(.workspace_id == $ws)
+      | .worktree.checkout_path // empty')"
+
+orig_tab="${HERDR_TAB_ID:-$(printf '%s' "$json" |
+  jq -r --arg ws "$ws" '.result.workspaces[]
+      | select(.workspace_id == $ws)
+      | .active_tab_id')}"
+
+mktab() { # usage: mktab <label> [command] — sets $tab and $pane
+  if [ -n "$cwd" ]; then
+    out="$(herdr tab create --workspace "$ws" --cwd "$cwd" --label "$1" --no-focus)"
+  else
+    out="$(herdr tab create --workspace "$ws" --label "$1" --no-focus)"
+  fi
+  tab="$(printf '%s' "$out" | jq -r '.result.tab.tab_id')"
+  pane="$(printf '%s' "$out" | jq -r '.result.root_pane.pane_id')"
+  if [ "$#" -gt 1 ]; then
+    herdr pane run "$pane" "$2"
+  fi
+}
+
+mktab agents codex
+mktab vim "nvim ."
+mktab server
+server_tab="$tab"
+
+herdr tab focus "$server_tab"
+herdr tab close "$orig_tab"

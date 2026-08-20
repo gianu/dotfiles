@@ -15,3 +15,33 @@ name = "catppuccin"
 [keys]
 prefix = "ctrl+a"
 goto = "prefix+f"
+
+# Toggle side panel
+toggle_sidebar = "prefix+p"
+
+# Override herdr's built-in "new worktree" key (prefix+shift+g) with worktrunk's
+# default-branch switch/create picker:
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create from default branch"
+
+# Worktrunk remove worktree
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
+
+# herdr-sessionizer
+[[keys.command]]
+key = "prefix+shift+f"
+type = "plugin_action"
+command = "sessionizer.open"
+description = "open project workspace"
+
+[[keys.command]]
+key = "prefix+shift+l"
+type = "shell"                            # verify the exact type name against your herdr keybinding docs
+command = "~/.local/scripts/herdr-layout"
