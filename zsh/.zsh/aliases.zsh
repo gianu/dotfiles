@@ -51,3 +51,13 @@ alias vim='nvim'
 # Fabric
 # =========================================================
 alias fabric='fabric-ai'
+
+# =========================================================
+# ClassDojo Kubernetes
+# =========================================================
+alias kctl-test='kubectl --context="aws/us-west-1-test"'
+alias kctl-ci='kubectl --context="aws/us-east-1-ci"'
+alias kctl-prod='kubectl --context="aws/us-east-1-prod"'
+alias kctl-ext='kubectl --context="aws/us-west-1-external"'
+alias kctl-dataeng='kubectl --context="aws/us-east-1-dataeng"'
+alias kctl-int='kubectl  --context="aws/us-east-1-internal"'
